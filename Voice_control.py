@@ -17,15 +17,7 @@ from dronekit import connect, VehicleMode, LocationGlobalRelative, Command, Loca
 from pymavlink import mavutil
 import Tkinter as tk
 import argparse
-r = sr.Recognizer()
-with sr.Microphone() as source:
-    print("Speak Anything :")
-    audio = r.listen(source)
-    try:
-        text = r.recognize_google(audio)
-        print("You said : {}".format(text))
-    except:
-        print("Sorry could not recognize your voice")
+
 
 
 #-- Connect to the vehicle
@@ -91,12 +83,9 @@ def set_velocity_body(vehicle, vx, vy, vz):
     vehicle.flush()
 
 
-#-- Key event function
+#-- Voice Controlfunction
 
-def key():
-	if text =='Hello'
-	print 'Welcome To Vasuki'
-
+def voice():
 	  if event.keysym == 'r':
            print("r pressed >> Set the vehicle to RTL")
    	        vehicle.mode = VehicleMode("RTL")
@@ -148,22 +137,19 @@ except sr.RequestError as e:
 
 return data
 
-def jarvis(data):
-    if "how are you" in data:
-        speak("I am fine")
+def initialization(data):
+    if "start" in data:
+        return arm_and_takeoff(altitude)
 
-if "what time is it" in data:
+if "turn right" in data:
     speak(ctime())
 
-if "where is" in data:
-    data = data.split(" ")
-    location = data[2]
-    speak("Hold on Frank, I will show you where " + location + " is.")
-    os.system("chromium-browser https://www.google.nl/maps/place/" + location + "/&amp;")
+if "" in data:
+
 
 # initialization
 time.sleep(2)
-speak("Hi Frank, what can I do for you?")
+speak("")
 while 1:
     data = recordAudio()
-jarvis(data)
+initializationS(data)
