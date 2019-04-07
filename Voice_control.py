@@ -5,6 +5,7 @@ cd dronekit-python
 git pull
 sudo python setup.py build
 sudo python setup.py install
+¬¬¬¬¬¬¬¬¬ UNDER CONSTRUCTION ¬¬¬¬¬¬¬¬
 """
 
 import speech_recognition as sr
